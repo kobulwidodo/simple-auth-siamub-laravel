@@ -43,6 +43,33 @@
                             <img src="https://siakad.ub.ac.id/dirfoto/foto/foto_2020/{{ $data['data']['nim'] }}.jpg" alt="" width="150px">
                         </div>
                     </div>
+                    <button class="btn border-bottom w-100 mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapsGrade" aria-expanded="false" aria-controls="collapseExample">
+                        Lihat Nilai
+                    </button>
+                    <div class="collapse" id="collapsGrade">
+                        <table class="table mt-4">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Kode Matkul</th>
+                                <th scope="col">Matkul</th>
+                                <th scope="col">SKS</th>
+                                <th scope="col">Nilai</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($data['data']['gpa'] as $gpa)
+                                <tr>
+                                    <th scope="row">{{ $gpa['no'] }}</th>
+                                    <td>{{ $gpa['kode_matkul'] }}</td>
+                                    <td>{{ $gpa['matkul'] }}</td>
+                                    <td>{{ $gpa['sks'] }}</td>
+                                    <td>{{ $gpa['nilai'] }}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                     @else
                         <p>{{ $data['msg'] }}</p>
                     @endif

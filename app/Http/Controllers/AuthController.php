@@ -20,7 +20,7 @@ class AuthController extends Controller
             'nim' => $request->nim,
             'password' => $request->password
         ];
-        $result = $auth->auth($data);
+        $result = $auth->authWithGpa($data);
         $data = $result->original;
         // dd($data);
 
